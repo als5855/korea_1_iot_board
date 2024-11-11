@@ -33,4 +33,6 @@ public class Article {
     @Builder.Default
     @OneToMany(mappedBy = "article", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Comment> comments = new ArrayList<>();
+    // 댓글이 담을수 있다.
+    // cascade = CascadeType.ALL 해당 기사가 살지만 댓글도 다 사라지니다. mappedBy= "article"은 Commen tarticle에 연결된 것
 }
