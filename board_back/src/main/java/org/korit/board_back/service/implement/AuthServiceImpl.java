@@ -17,7 +17,7 @@ import org.springframework.stereotype.Service;
 
 @Service
 @RequiredArgsConstructor
-public class AuthServiceImplement implements AuthService {
+public class AuthServiceImpl implements AuthService {
 
 
     private final UserRepository userRepository;
@@ -135,7 +135,7 @@ public class AuthServiceImplement implements AuthService {
 
         try {
 
-           User user  = userRepository.finByUserId(userId)
+           User user  = userRepository.findByUserId(userId)
                    .orElseThrow(null);//if 조건문으로 에러를 발생
            if( user == null) {
                return ResponseDto.setFailed(ResponseMessage.NOT_EXIST_USER);
